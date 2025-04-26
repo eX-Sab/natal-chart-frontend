@@ -21,7 +21,7 @@ header box-icon:hover {
 }
 
 .lighten-blend {
-  mix-blend-mode: lighten;
+  /* mix-blend-mode: lighten; */
 }
 
 h1 {
@@ -60,7 +60,7 @@ button:active {
 
 
 @theme {
-  --color-darkbackground: #10172a;
+  --color-darkbackground: #020014;
   --color-primary: #3b82f6;
   --font-Philosopher: 'Philosopher', sans-serif;
   --font-Dosis: 'Dosis', sans-serif;

@@ -50,14 +50,14 @@ function App() {
   return (
     <>
       <div className="flex justify-center">
-        <video
+        {/* <video
           autoPlay
           loop
           muted
           playsInline
           className="fixed inset-0 top-0 w-full h-full -z-20 object-cover">
           <source src="/galaxy-c1000.mp4" type="video/mp4" />
-        </video>
+        </video> */}
         <header className="fixed top-0 right-0 left-0 inset-0 z-[99] bg-[#fcfcfc2d] w-full h-[70px] px-[30px] shadow-2xl shadow-black/80">
           <div className="flex flex-row w-full h-full text-white items-center justify-between gap-4">
             <h1>
