@@ -9,9 +9,16 @@ function App() {
   const [location, setLocation] = useState("");
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [showStillWorking, setShowStillWorking] = useState(false);
 
   function OnCalculate() {
+    setResult(null); // Hide result section when calculation starts
     setLoading(true);
+    setShowStillWorking(false);
+    // Show still working message after 5 seconds
+    const stillWorkingTimeout = setTimeout(() => {
+      setShowStillWorking(true);
+    }, 5000);
     // Combine year, month, day into YYYY-MM-DD format using select values
     const formattedDate = `${year}-${month.padStart(2, "0")}-${day.padStart(
       2,
@@ -37,12 +44,16 @@ function App() {
     })
       .then((res) => res.json())
       .then((data) => {
+        clearTimeout(stillWorkingTimeout);
         setResult(data);
         setLoading(false);
+        setShowStillWorking(false);
         console.log("API result:", data);
       })
       .catch((err) => {
+        clearTimeout(stillWorkingTimeout);
         setLoading(false);
+        setShowStillWorking(false);
         console.error("API error:", err);
       });
   }
@@ -179,7 +190,14 @@ function App() {
         </button>
 
         {loading && (
-          <div className="code text-blue-500 font-semibold">Calculating...</div>
+          <div className="code text-blue-500 font-semibold">
+            Calculating...
+            {showStillWorking && (
+              <div className="text-xs text-gray-300 mt-2">
+                The server is booting, the process will be ready in a minute
+              </div>
+            )}
+          </div>
         )}
 
         {result && (
