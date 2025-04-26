@@ -38,7 +38,7 @@ h2 {
 }
 
 input {
-  @apply font-KoHo text-lg border-1 bg-white/20 border-white/50 rounded-lg p-2 text-blue-800 placeholder:text-gray-400;
+  @apply font-KoHo text-lg border-1 bg-white/20 border-white/50 rounded-lg p-2 placeholder:text-gray-400;
 }
 
 button {

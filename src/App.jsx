@@ -12,7 +12,7 @@ function App() {
 
   function OnCalculate() {
     setLoading(true);
-    // Combine year, month, day into YYYY-MM-DD format
+    // Combine year, month, day into YYYY-MM-DD format using select values
     const formattedDate = `${year}-${month.padStart(2, "0")}-${day.padStart(
       2,
       "0"
@@ -114,24 +114,55 @@ function App() {
             onChange={(e) => setName(e.target.value)}
           />
           <div className="flex flex-row w-full items-center gap-4">
-            <input
-              type="text"
-              placeholder="DD"
-              className="flex border-2 border-gray-300 rounded-lg p-2 w-10"
-              onChange={(e) => setDay(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="MM"
-              className="flex border-2 border-gray-300 rounded-lg p-2 w-10"
-              onChange={(e) => setMonth(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="YYYY"
-              className="flex border-2 border-gray-300 rounded-lg p-2 w-15"
-              onChange={(e) => setYear(e.target.value)}
-            />
+            <select
+              className="flex border-1 border-primary h-8 font-Dosis text-lg weig-"
+              value={day}
+              onChange={(e) => setDay(e.target.value)}>
+              <option value="">Day</option>
+              {[...Array(31)].map((_, i) => (
+                <option key={i + 1} value={String(i + 1).padStart(2, "0")}>
+                  {i + 1}
+                </option>
+              ))}
+            </select>
+            <select
+              className="flex border-1 border-primary h-8 font-Dosis text-lg"
+              value={month}
+              onChange={(e) => setMonth(e.target.value)}>
+              <option value="">Month</option>
+              {[
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+              ].map((name, i) => (
+                <option key={i + 1} value={String(i + 1).padStart(2, "0")}>
+                  {name}
+                </option>
+              ))}
+            </select>
+            <select
+              className="flex border-1 border-primary h-8 font-Dosis text-lg"
+              value={year}
+              onChange={(e) => setYear(e.target.value)}>
+              <option value="">Year</option>
+              {Array.from({ length: 100 }, (_, i) => {
+                const y = new Date().getFullYear() - i;
+                return (
+                  <option key={y} value={y}>
+                    {y}
+                  </option>
+                );
+              })}
+            </select>
           </div>
           <input
             type="text"
