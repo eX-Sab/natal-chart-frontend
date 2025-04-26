@@ -21,7 +21,7 @@ header box-icon:hover {
 }
 
 .lighten-blend {
-  /* mix-blend-mode: lighten; */
+  mix-blend-mode: lighten;
 }
 
 h1 {
