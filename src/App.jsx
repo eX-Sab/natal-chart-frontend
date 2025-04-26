@@ -51,14 +51,13 @@ function App() {
     <>
       <div className="flex justify-center">
         <video
-          src="/galaxy.mp4"
-          type="video/mp4"
           autoPlay
           loop
           muted
           playsInline
-          className="fixed inset-0 top-0 w-full h-full -z-20 object-cover"
-        />
+          className="fixed inset-0 top-0 w-full h-full -z-20 object-cover">
+          <source src="/galaxy.mp4" type="video/mp4" />
+        </video>
         <header className="fixed top-0 right-0 left-0 inset-0 z-[99] bg-[#fcfcfc2d] w-full h-[70px] px-[30px] shadow-2xl shadow-black/80">
           <div className="flex flex-row w-full h-full text-white items-center justify-between gap-4">
             <h1>
@@ -89,15 +88,17 @@ function App() {
           </div>
         </header>
 
-        <div className="lighten-blend -z-10 fixed top-[-380px] items-center justify-center">
+        <div className="lighten-blend -z-10 fixed top-[-230px] items-center justify-center">
           <video
-            src="/blackhole.webm"
             autoPlay
             loop
             muted
             playsInline
-            className="relative h-[900px] object-cover"
-          />
+            className="relative h-[600px] object-cover">
+            <source src="/blackhole.webm" type="video/webm" />
+            <source src="/blackhole.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
 
