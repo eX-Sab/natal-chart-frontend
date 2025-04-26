@@ -61,7 +61,7 @@ function App() {
         <header className="fixed top-0 right-0 left-0 inset-0 z-[99] bg-[#fcfcfc2d] w-full h-[70px] px-[30px] shadow-2xl shadow-black/80">
           <div className="flex flex-row w-full h-full text-white items-center justify-between gap-4">
             <h1>
-              My <span className="gradient"> Divinations</span>
+              MY <span className="gradient"> DIVINATIONS</span>
             </h1>
             <ul className="flex flex-row gap-4 w-120 h-12 justify-around items-center rounded-full border border-white bg-[rgba(0,0,69,0.3)] backdrop-blur-xl shadow-[0_0_30px_0_rgba(0,0,0,0.5)]">
               <li>
@@ -104,12 +104,10 @@ function App() {
 
       <div className="flex flex-col items-center mt-[200px] gap-4">
         <div className="relative">
-          <h1 className="gradient text-white text-shadow-lg text-shadow-blue-100/80">
-            Natal Chart Calculator
-          </h1>
+          <h2 className="text-white">NATAL CHART CALCULATOR</h2>
         </div>
-        <div className="flex flex-col items-center justify-center w-100 gap-4 bg-[#d4d4d4] mt-5 p-10 border border-amber-50/30 rounded-2xl">
-          <h1 className="font-bold text-black text-shadow-lg">Birth Info</h1>
+        <div className="flex flex-col items-center justify-center w-100 gap-4 bg-[#d4d4d4f2] mt-5 p-10 border border-white/50 rounded-2xl">
+          <h2 className="font-bold text-black">Birth Info</h2>
           <input
             type="text"
             placeholder="Enter your name"
@@ -147,17 +145,17 @@ function App() {
         <button
           className="bg-primary text-white rounded-2xl h-15 w-40"
           onClick={OnCalculate}>
-          Calculate
+          CALCULATE
         </button>
 
         {loading && (
-          <div className="text-blue-500 font-semibold">Calculating...</div>
+          <div className="code text-blue-500 font-semibold">Calculating...</div>
         )}
 
         {result && (
           <div className="flex flex-col items-center justify-center w-60 gap-4 text-shadow-neutral-900/30 text-shadow-lg">
-            <h1 className="text-cyan-300">Results</h1>
-            <div className="flex flex-col items-center justify-center w-full gap-4 text-white">
+            <h2 className="text-cyan-300">Results</h2>
+            <div className="flex flex-col code items-center justify-center w-full gap-4 text-white">
               <div className="flex border bg-amber-50/10 border-gray-300/50 rounded-lg p-2 w-full backdrop-blur-xs">
                 <p>
                   Sun:{" "}
