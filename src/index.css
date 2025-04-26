@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* @custom-variant dark (&where(.dark, .dark *)); */
+
+body {
+  @apply bg-darkbackground;
+}
+
+header ul {
+  @apply flex justify-between px-[15px];
+}
+
+header box-icon {
+  @apply w-10 h-10 fill-white;
+  transition: fill 0.3s ease;
+}
+
+header box-icon:hover {
+  @apply fill-white/50;
+}
+
+.lighten-blend {
+  mix-blend-mode: lighten;
+}
+
+h1 {
+  @apply text-4xl font-black;
+}
+
+h1.gradient,
+h1 .gradient {
+  @apply bg-gradient-to-br from-emerald-500 to-blue-500 bg-clip-text text-transparent;
+}
+
+input {
+  @apply border-1 bg-white/20 border-white/50 rounded-lg p-2 text-blue-800 placeholder:text-gray-400;
+}
+
+button {
+  @apply bg-primary;
+  transition: background-color 0.3s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  @apply bg-gradient-to-br from-emerald-500 to-blue-500 shadow-2xl shadow-emerald-500/50;
+}
+
+button:active {
+  @apply outline-none ring-1 ring-offset-white;
+}
+
+
+@theme {
+  --color-darkbackground: #10172a;
+  --color-primary: #3b82f6;
+}
